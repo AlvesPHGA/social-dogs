@@ -13,6 +13,7 @@ export const GlobalStyle = createGlobalStyle`
 
       color: #333;
       font-family: var(--type-first);
+      padding-top: 4rem;
    }
 
    h1, h2, h3, h4, p{
