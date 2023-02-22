@@ -6,6 +6,7 @@ const Input = ({ legend, type, userName }) => {
       <FieldInputStyle>
          <legend>{legend}</legend>
          <input type={type} name={userName} id="" />
+         <p className="error">Error</p>
       </FieldInputStyle>
    );
 };
