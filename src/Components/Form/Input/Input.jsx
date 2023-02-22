@@ -1,8 +1,13 @@
 import React from 'react';
-import { InputStyle } from './Input.style';
+import { FieldInputStyle } from './FieldInputStyle.style';
 
-const Input = () => {
-   return <InputStyle></InputStyle>;
+const Input = ({ legend, type, userName }) => {
+   return (
+      <FieldInputStyle>
+         <legend>{legend}</legend>
+         <input type={type} name={userName} id="" />
+      </FieldInputStyle>
+   );
 };
 
 export default Input;
