@@ -1,10 +1,12 @@
 import React from 'react';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
+import useForm from '../../../Hooks/useForm';
 
 const LoginForm = () => {
-   const [userName, setUserName] = React.useState('');
-   const [userPass, setUserPass] = React.useState('');
+   const username = useForm();
+
+   console.log(username);
 
    function handleSubmit() {
       fetch('https://dogsapi.origamid.dev/json/jwt-auth/v1/token', {
@@ -12,7 +14,7 @@ const LoginForm = () => {
          headers: {
             'Content-type': 'application/json',
          },
-         body: JSON.stringify({ userName, userPass }),
+         body: JSON.stringify(),
       })
          .then((res) => {
             console.log(res);
@@ -27,7 +29,7 @@ const LoginForm = () => {
          <h1>Login</h1>
 
          <form onSubmit={handleSubmit}>
-            <Input legend="Usuario" type="text" name="userName" />
+            <Input legend="Usuario" type="text" name="userName" {...username} />
             <Input legend="Senha" type="password" name="userPass" />
 
             <Button>Entrar</Button>

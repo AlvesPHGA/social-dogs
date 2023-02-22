@@ -5,7 +5,7 @@ const useForm = () => {
    const [error, setError] = React.useState(null);
 
    function onChange({ target }) {
-      console.log(target.value);
+      setValue(target.value);
    }
    return {
       value,
