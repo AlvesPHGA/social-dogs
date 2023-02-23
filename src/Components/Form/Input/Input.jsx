@@ -1,7 +1,16 @@
 import React from 'react';
 import { FieldInputStyle } from './FieldInputStyle.style';
 
-const Input = ({ legend, type, userName, value, setValue, onChange }) => {
+const Input = ({
+   legend,
+   type,
+   userName,
+   value,
+   setValue,
+   onChange,
+   onBlur,
+   error,
+}) => {
    return (
       <FieldInputStyle>
          <legend>{legend}</legend>
@@ -11,8 +20,9 @@ const Input = ({ legend, type, userName, value, setValue, onChange }) => {
             id=""
             value={value}
             onChange={onChange}
+            onBlur={onBlur}
          />
-         <p className="error">Error</p>
+         {error && <p className="error">{error}</p>}
       </FieldInputStyle>
    );
 };
