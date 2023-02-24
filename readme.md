@@ -6,10 +6,10 @@ This project is consist a final project of React class, this is a social media t
 
 ## Topics Covered
 
-. useState
-. useContext
-. useEffect
-. Routers
+Markup : _ useState
+Markup : _ useContext
+Markup : _ useEffect
+Markup : _ Routers
 
 ## Techonologies
 
