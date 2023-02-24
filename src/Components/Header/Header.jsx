@@ -4,8 +4,10 @@ import { Link } from 'react-router-dom';
 import { Container } from '../../Styles/Styles.style';
 
 import { ReactComponent as Dogs } from '../../assets/dogs.svg';
+import { UserContext } from '../../UserContext';
 
 const Header = () => {
+   const { data } = React.useContext(UserContext);
    return (
       <HeaderStyle>
          <Container>
@@ -13,7 +15,11 @@ const Header = () => {
                <Link to="/">
                   <Dogs />
                </Link>
-               <Link to="/login">Login / Criar</Link>
+               {data ? (
+                  <Link to="/accout">{data.nome}</Link>
+               ) : (
+                  <Link to="/login">Login / Criar</Link>
+               )}
             </nav>
          </Container>
       </HeaderStyle>
