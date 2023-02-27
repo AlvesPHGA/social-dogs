@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
 import { Title } from '../../../Components/Global/Title';
+import Error from '../../../Components/Helper/Error/Error';
 import useForm from '../../../Hooks/useForm';
 import { AnimaLeft } from '../../../Styles/Styles.style';
 import { UserContext } from '../../../UserContext';
@@ -38,7 +39,7 @@ const LoginForm = () => {
                <Button>Entrar</Button>
             )}
 
-            {error && <p>{error}</p>}
+            <Error error={error} />
          </form>
       </AnimaLeft>
    );
