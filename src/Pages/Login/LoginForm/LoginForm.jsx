@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
 import useForm from '../../../Hooks/useForm';
+import { AnimaLeft } from '../../../Styles/Styles.style';
 import { UserContext } from '../../../UserContext';
 
 const LoginForm = () => {
@@ -18,7 +19,7 @@ const LoginForm = () => {
    }
 
    return (
-      <>
+      <AnimaLeft>
          <h1>Login</h1>
 
          <form onSubmit={handleSubmit}>
@@ -38,7 +39,7 @@ const LoginForm = () => {
 
             {error && <p>{error}</p>}
          </form>
-      </>
+      </AnimaLeft>
    );
 };
 
