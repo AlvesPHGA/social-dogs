@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
+import { Title } from '../../../Components/Global/Title';
 import useForm from '../../../Hooks/useForm';
 import { AnimaLeft } from '../../../Styles/Styles.style';
 import { UserContext } from '../../../UserContext';
@@ -20,7 +21,7 @@ const LoginForm = () => {
 
    return (
       <AnimaLeft>
-         <h1>Login</h1>
+         <Title>Login</Title>
 
          <form onSubmit={handleSubmit}>
             <Input legend="Usuario" type="text" name="userName" {...username} />
