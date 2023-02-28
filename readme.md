@@ -9,6 +9,7 @@ This project is consist a final project of React class, this is a social media t
 -  useState
 -  useContext
 -  useEffect
+-  useCallback
 -  Routers
 
 ## Techonologies
