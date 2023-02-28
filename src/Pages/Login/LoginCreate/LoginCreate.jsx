@@ -1,4 +1,5 @@
 import React from 'react';
+import { USER_POST } from '../../../api';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
 import { Title } from '../../../Components/Global/Title';
@@ -11,12 +12,20 @@ const LoginCreate = () => {
    const email = useForm('email');
    const password = useForm();
 
-   const { url, options } = React.useContext(UserContext);
+   const { userLogin } = React.useContext(UserContext);
 
    async function handleCreatedAccout(ev) {
       ev.preventDefault();
+
+      const { url, options } = USER_POST({
+         username: username.value,
+         email: email.value,
+         password: password.value,
+      });
+
       const res = await fetch(url, options);
-      const json = await res.json();
+
+      if (res.ok) userLogin(username.value, password.value);
    }
 
    return (
