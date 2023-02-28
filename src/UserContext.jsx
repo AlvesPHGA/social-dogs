@@ -47,6 +47,8 @@ export const UserStorage = ({ children }) => {
             } finally {
                setLoad(false);
             }
+         } else {
+            setLogin(false);
          }
       }
    }, [userLogout]);
