@@ -1,9 +1,14 @@
 import React from 'react';
 import { USER_POST } from '../../../api';
+
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
 import { Title } from '../../../Components/Global/Title';
+import Error from '../../../Components/Helper/Error/Error';
+
+import useFetch from '../../../Hooks/useFetch';
 import useForm from '../../../Hooks/useForm';
+
 import { AnimaLeft } from '../../../Styles/Styles.style';
 import { UserContext } from '../../../UserContext';
 
@@ -13,6 +18,7 @@ const LoginCreate = () => {
    const password = useForm();
 
    const { userLogin } = React.useContext(UserContext);
+   const { load, error, request } = useFetch();
 
    async function handleCreatedAccout(ev) {
       ev.preventDefault();
@@ -23,7 +29,7 @@ const LoginCreate = () => {
          password: password.value,
       });
 
-      const res = await fetch(url, options);
+      const { res } = await request(url, options);
 
       if (res.ok) userLogin(username.value, password.value);
    }
@@ -46,7 +52,13 @@ const LoginCreate = () => {
                name="userPass"
                {...password}
             />
-            <Button>Cadastrar</Button>
+
+            {load ? (
+               <Button disabled>Carregando...</Button>
+            ) : (
+               <Button>Cadastrar</Button>
+            )}
+            <Error error={error} />
          </form>
       </AnimaLeft>
    );
