@@ -10,23 +10,25 @@ import { ReactComponent as Exit } from '../../../assets/sair.svg';
 
 const Nav = () => {
    const { userLogout } = React.useContext(UserContext);
+
+   const [mobile, setMobile] = React.useState(null);
    return (
       <UserNav>
          <NavLink to="/accout">
             <MyPhotos />
-            Minhas fotos
+            {mobile && 'Minhas fotos'}
          </NavLink>
          <NavLink to="/accout/stats">
             <MyStats />
-            Estatisticas
+            {mobile && 'Estatisticas'}
          </NavLink>
          <NavLink to="/accout/post">
             <AddPhoto />
-            Adicionar foto
+            {mobile && 'Adicionar foto'}
          </NavLink>
          <button onClick={userLogout}>
             <Exit />
-            Sair
+            {mobile && 'Sair'}
          </button>
       </UserNav>
    );
