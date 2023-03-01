@@ -17,11 +17,7 @@ const Header = () => {
                   <Dogs />
                </Link>
                {data ? (
-                  <Link to="/accout">
-                     {data.nome}
-
-                     <button onClick={userLogout}>Sair</button>
-                  </Link>
+                  <Link to="/accout">{data.nome}</Link>
                ) : (
                   <Link to="/login">Login / Criar</Link>
                )}
