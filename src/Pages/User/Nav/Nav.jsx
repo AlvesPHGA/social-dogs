@@ -14,7 +14,7 @@ const Nav = () => {
    const [mobile, setMobile] = React.useState(null);
    return (
       <UserNav>
-         <NavLink to="/accout">
+         <NavLink to="/accout" end>
             <MyPhotos />
             {mobile && 'Minhas fotos'}
          </NavLink>
