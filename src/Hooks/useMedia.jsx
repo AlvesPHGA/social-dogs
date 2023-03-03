@@ -5,13 +5,15 @@ const useMedia = (media) => {
 
    React.useEffect(() => {
       const changeMatch = () => {
-         const { matches } = window.matchMedia();
+         const { matches } = window.matchMedia(media);
          setMatch(matches);
       };
 
       window.addEventListener('resize', changeMatch);
 
-      return () => window.removeEventListener('resize', changeMatch);
+      return () => {
+         window.removeEventListener('resize', changeMatch);
+      };
    }, [media]);
    return match;
 };
