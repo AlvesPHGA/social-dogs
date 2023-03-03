@@ -17,3 +17,7 @@ This project is consist a final project of React class, this is a social media t
 1. ReactJS
 2. Styled-components
 3. API
+
+---
+
+-> Fix mobile button
