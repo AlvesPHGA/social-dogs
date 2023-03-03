@@ -1,7 +1,9 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { PHOTO_POST } from '../../../api';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
+import Error from '../../../Components/Helper/Error/Error';
 import useFetch from '../../../Hooks/useFetch';
 import useForm from '../../../Hooks/useForm';
 import { AnimaLeft } from '../../../Styles/Styles.style';
@@ -15,6 +17,12 @@ const PhotoPost = () => {
    const [img, setImg] = React.useState({});
 
    const { data, error, load, request } = useFetch();
+
+   const navigate = useNavigate();
+
+   React.useEffect(() => {
+      if (data) navigate('/accout');
+   }, [data, navigate]);
 
    function handleChangePhoto({ target }) {
       setImg({
@@ -53,7 +61,12 @@ const PhotoPost = () => {
                   id="img"
                   onChange={handleChangePhoto}
                />
-               <Button>Enviar</Button>
+               {load ? (
+                  <Button disabled>Enviando...</Button>
+               ) : (
+                  <Button>Enviar</Button>
+               )}
+               <Error error={error} />
             </form>
             <PreviewPhoto>
                {img.preview && (
