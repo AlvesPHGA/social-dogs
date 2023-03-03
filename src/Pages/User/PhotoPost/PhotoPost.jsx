@@ -23,6 +23,14 @@ const PhotoPost = () => {
    async function handlePostPhoto(ev) {
       ev.preventDefault();
 
+      const formData = new FormData();
+      formData.append('img', img.file);
+      formData.append('nome', name.value);
+      formData.append('idade', age.value);
+      formData.append('peso', weight.value);
+
+      await request(url, options);
+
       console.log(name.value, age.value, weight.value);
    }
 
