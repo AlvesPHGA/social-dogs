@@ -3,7 +3,9 @@ import { PHOTOS_GET } from '../../../api';
 import Error from '../../../Components/Helper/Error/Error';
 import Load from '../../../Components/Helper/Load/Load';
 import useFetch from '../../../Hooks/useFetch';
+import { AnimaLeft } from '../../../Styles/Styles.style';
 import FeedPhotoItems from '../FeedPhotoItems/FeedPhotoItems';
+import { FeedPhotosStyle } from './FeedPhotos.style';
 
 const FeedPhotos = () => {
    const { data, load, error, request } = useFetch();
@@ -24,11 +26,13 @@ const FeedPhotos = () => {
 
    if (data)
       return (
-         <>
-            {data.map((photo) => (
-               <FeedPhotoItems key={photo.id} photo={photo} />
-            ))}
-         </>
+         <AnimaLeft>
+            <FeedPhotosStyle>
+               {data.map((photo) => (
+                  <FeedPhotoItems key={photo.id} photo={photo} />
+               ))}
+            </FeedPhotosStyle>
+         </AnimaLeft>
       );
    else return null;
 };
