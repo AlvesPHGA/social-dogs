@@ -1,7 +1,13 @@
 import React from 'react';
+import { Container } from '../../Styles/Styles.style';
+import FeedModal from './FeedModal/FeedModal';
 
 const Feeds = () => {
-   return <div>Feeds</div>;
+   return (
+      <Container>
+         <FeedModal />
+      </Container>
+   );
 };
 
 export default Feeds;
