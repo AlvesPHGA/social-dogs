@@ -5,10 +5,10 @@ import FeedPhotos from './FeedPhotos/FeedPhotos';
 
 const Feeds = () => {
    return (
-      <Container>
+      <>
          <FeedModal />
          <FeedPhotos />
-      </Container>
+      </>
    );
 };
 
