@@ -1,5 +1,6 @@
 import React from 'react';
 import { PHOTO_GET } from '../../../api';
+import PhotoContent from '../../../Components/Global/PhotoContent/PhotoContent';
 import Error from '../../../Components/Helper/Error/Error';
 import Load from '../../../Components/Helper/Load/Load';
 import useFetch from '../../../Hooks/useFetch';
@@ -17,7 +18,7 @@ const FeedModal = ({ photo }) => {
       <FeedModalStyle>
          {error && <Error error={error} />}
          {load && <Load />}
-         {data && <img src={photo.src} alt="" />}
+         {data && <PhotoContent data={data} />}
       </FeedModalStyle>
    );
 };
