@@ -7,7 +7,7 @@ import { AnimaLeft } from '../../../Styles/Styles.style';
 import FeedPhotoItems from '../FeedPhotoItems/FeedPhotoItems';
 import { FeedPhotosStyle } from './FeedPhotos.style';
 
-const FeedPhotos = () => {
+const FeedPhotos = ({ setModalPhoto }) => {
    const { data, load, error, request } = useFetch();
 
    React.useEffect(() => {
@@ -29,7 +29,11 @@ const FeedPhotos = () => {
          <AnimaLeft>
             <FeedPhotosStyle>
                {data.map((photo) => (
-                  <FeedPhotoItems key={photo.id} photo={photo} />
+                  <FeedPhotoItems
+                     key={photo.id}
+                     photo={photo}
+                     setModalPhoto={setModalPhoto}
+                  />
                ))}
             </FeedPhotosStyle>
          </AnimaLeft>
