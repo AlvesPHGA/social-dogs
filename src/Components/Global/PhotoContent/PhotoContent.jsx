@@ -22,7 +22,7 @@ const PhotoContent = ({ data }) => {
          </BoxImage>
          <BoxDetails>
             <BoxContentDetails>
-               <p>
+               <p className="author">
                   <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
                   <span className="views">{photo.acessos}</span>
                </p>
