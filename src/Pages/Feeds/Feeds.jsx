@@ -7,7 +7,9 @@ const Feeds = () => {
    const [modalPhoto, setModalPhoto] = React.useState(null);
    return (
       <>
-         {modalPhoto && <FeedModal photo={modalPhoto} />}
+         {modalPhoto && (
+            <FeedModal photo={modalPhoto} setModalPhoto={setModalPhoto} />
+         )}
 
          <FeedPhotos setModalPhoto={setModalPhoto} />
       </>

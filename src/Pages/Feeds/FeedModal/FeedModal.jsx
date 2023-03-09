@@ -6,7 +6,7 @@ import Load from '../../../Components/Helper/Load/Load';
 import useFetch from '../../../Hooks/useFetch';
 import { FeedModalStyle } from './FeedModal.style';
 
-const FeedModal = ({ photo }) => {
+const FeedModal = ({ photo, setModalPhoto }) => {
    const { data, error, load, request } = useFetch();
 
    React.useEffect(() => {
@@ -14,8 +14,12 @@ const FeedModal = ({ photo }) => {
       request(url, options);
    }, [photo, request]);
 
+   function handleCloseModal(ev) {
+      if (ev.target === ev.currentTarget) setModalPhoto(null);
+   }
+
    return (
-      <FeedModalStyle>
+      <FeedModalStyle onClick={handleCloseModal}>
          {error && <Error error={error} />}
          {load && <Load />}
          {data && <PhotoContent data={data} />}
