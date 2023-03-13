@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../../UserContext';
 import PhotoComments from '../PhotoComments/PhotoComments';
+import PhotoDelete from '../PhotoDelete/PhotoDelete';
 import { Title } from '../Title';
 import {
    BoxAttributeDetails,
@@ -11,9 +13,11 @@ import {
 } from './PhotoContent.style';
 
 const PhotoContent = ({ data }) => {
+   const user = React.useContext(UserContext);
+
    const { photo, comments } = data;
 
-   console.log(photo);
+   console.log(data);
 
    return (
       <PhotoContentStyle>
@@ -23,7 +27,11 @@ const PhotoContent = ({ data }) => {
          <BoxDetails>
             <BoxContentDetails>
                <p className="author">
-                  <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+                  {user.data && user.data.username === photo.author ? (
+                     <PhotoDelete id={photo.id} />
+                  ) : (
+                     <Link to={`/perfil/${photo.author}`}>@{photo.author}</Link>
+                  )}
                   <span className="views">{photo.acessos}</span>
                </p>
 
