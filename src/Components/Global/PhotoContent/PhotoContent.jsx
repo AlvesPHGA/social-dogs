@@ -17,8 +17,6 @@ const PhotoContent = ({ data }) => {
 
    const { photo, comments } = data;
 
-   console.log(data);
-
    return (
       <PhotoContentStyle>
          <BoxImage>
