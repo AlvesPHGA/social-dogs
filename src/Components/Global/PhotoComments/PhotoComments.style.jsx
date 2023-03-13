@@ -1,5 +1,14 @@
 import styled from 'styled-components';
 
 export const PhotoCommentsStyle = styled.div`
-   padding: 0 2rem;
+   & .commentsList {
+      overflow-y: auto;
+      word-break: break-word;
+      padding: 0 2rem;
+
+      & li {
+         margin-bottom: 0.5rem;
+         line-height: 1.2;
+      }
+   }
 `;
