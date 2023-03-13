@@ -35,5 +35,30 @@ export const PhotoCommentsFormStyle = styled.form`
       font-size: 1rem;
       padding: 0 1rem;
       overflow: hidden;
+
+      &:focus,
+      &:hover {
+         outline: none;
+
+         & svg {
+            path {
+               fill: #fea;
+               stroke: #fb1;
+            }
+
+            & g {
+               animation: bark 0.6s infinite;
+            }
+
+            @keyframes bark {
+               from {
+                  opacity: 0;
+               }
+               to {
+                  opacity: 1;
+               }
+            }
+         }
+      }
    }
 `;
