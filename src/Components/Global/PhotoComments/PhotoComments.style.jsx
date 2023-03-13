@@ -9,6 +9,10 @@ export const PhotoCommentsStyle = styled.div`
       & li {
          margin-bottom: 0.5rem;
          line-height: 1.2;
+
+         & span {
+            font-weight: bold;
+         }
       }
    }
 `;
