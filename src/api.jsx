@@ -114,3 +114,18 @@ export const COMMENT_PHOTO_POST = (id, body) => {
       },
    };
 };
+
+// delete photo
+export const DELETE_PHOTO = (id) => {
+   return {
+      url: `${API_URL}/api/photo/${id}`,
+
+      options: {
+         method: 'DELETE',
+
+         headers: {
+            Authorization: 'Bearer ' + window.localStorage.getItem('token'),
+         },
+      },
+   };
+};
