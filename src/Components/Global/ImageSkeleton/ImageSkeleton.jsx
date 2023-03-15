@@ -1,11 +1,12 @@
 import React from 'react';
+import { ImageSkeletonStyle } from './ImageSkeleton.style';
 
-const ImageSkeleton = ({ src, ...props }) => {
+const ImageSkeleton = ({ alt, ...props }) => {
    return (
-      <ImageSkeleton>
+      <ImageSkeletonStyle>
          <div className="skeleton"></div>
-         <img src={src} alt="" {...props} />
-      </ImageSkeleton>
+         <img className="image" alt={alt} {...props} />
+      </ImageSkeletonStyle>
    );
 };
 

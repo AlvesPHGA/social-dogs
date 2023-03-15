@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { UserContext } from '../../../UserContext';
+import ImageSkeleton from '../ImageSkeleton/ImageSkeleton';
 import PhotoComments from '../PhotoComments/PhotoComments';
 import PhotoDelete from '../PhotoDelete/PhotoDelete';
 import { Title } from '../Title';
@@ -20,7 +21,7 @@ const PhotoContent = ({ data }) => {
    return (
       <PhotoContentStyle>
          <BoxImage>
-            <img src={photo.src} alt={photo.title} />
+            <ImageSkeleton src={photo.src} alt={photo.title} />
          </BoxImage>
          <BoxDetails>
             <BoxContentDetails>
