@@ -7,19 +7,17 @@ import { AnimaLeft } from '../../../Styles/Styles.style';
 import FeedPhotoItems from '../FeedPhotoItems/FeedPhotoItems';
 import { FeedPhotosStyle } from './FeedPhotos.style';
 
-const FeedPhotos = ({ setModalPhoto }) => {
+const FeedPhotos = ({ user, setModalPhoto }) => {
    const { data, load, error, request } = useFetch();
 
    React.useEffect(() => {
       async function fetchPhotos() {
-         const { url, options } = PHOTOS_GET({ page: 1, total: 6, user: 0 });
-         const { res, json } = await request(url, options);
+         const { url, options } = PHOTOS_GET({ page: 1, total: 3, user });
+         const { json } = await request(url, options);
       }
 
       fetchPhotos();
-
-      console.log(data);
-   }, [request]);
+   }, [request, user]);
 
    if (error) return <Error error={error} />;
    if (load) return <Load />;
