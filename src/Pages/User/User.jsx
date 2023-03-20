@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import NotFound from '../../Components/Helper/NotFound/NotFound';
 import { Container } from '../../Styles/Styles.style';
 import { UserContext } from '../../UserContext';
 import Feeds from '../Feeds/Feeds';
@@ -16,6 +17,8 @@ const User = () => {
             <Route path="/" element={<Feeds user={data.id} />} />
             <Route path="post" element={<PhotoPost />} />
             <Route path="stats" element={<Stats />} />
+
+            <Route path="*" element={<NotFound />} />
          </Routes>
       </Container>
    );

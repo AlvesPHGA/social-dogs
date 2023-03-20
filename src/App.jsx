@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
+import NotFound from './Components/Helper/NotFound/NotFound';
 import ProtectedRoute from './Components/Helper/ProtectedRouter/ProtectedRoute';
 import Photo from './Components/Photo/Photo';
 
@@ -30,6 +31,8 @@ function App() {
                   />
                   <Route path="foto/:id" element={<Photo />} />
                   <Route path="perfil/:user" element={<UserProfile />} />
+
+                  <Route path="*" element={<NotFound />} />
                </Routes>
                <Footer />
             </UserStorage>

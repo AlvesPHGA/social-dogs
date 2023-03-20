@@ -1,11 +1,13 @@
 import React from 'react';
+import { Container } from '../../../Styles/Styles.style';
 import { Title } from '../../Global/Title';
 
 const NotFound = () => {
    return (
-      <section>
+      <Container className="mainContainer">
          <Title>NotFound</Title>
-      </section>
+         <p>Pagina não encontrada.</p>
+      </Container>
    );
 };
 
