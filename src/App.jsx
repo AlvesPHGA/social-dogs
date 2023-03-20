@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import ProtectedRoute from './Components/Helper/ProtectedRouter/ProtectedRoute';
+import Photo from './Components/Photo/Photo';
 
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -26,6 +27,7 @@ function App() {
                         </ProtectedRoute>
                      }
                   />
+                  <Route path="foto/:id" element={<Photo />} />
                </Routes>
                <Footer />
             </UserStorage>

@@ -85,6 +85,13 @@ export const PHOTOS_GET = ({ page, total, user }) => {
    };
 };
 
+// get photo
+export const PHOT_GET = (id) => {
+   return {
+      url: `${API_URL}/api/photo/${id}`,
+   };
+};
+
 // get photo to modal
 export const PHOTO_GET = (id) => {
    return {
