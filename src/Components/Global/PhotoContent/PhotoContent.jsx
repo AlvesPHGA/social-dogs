@@ -13,13 +13,13 @@ import {
    PhotoContentStyle,
 } from './PhotoContent.style';
 
-const PhotoContent = ({ data }) => {
+const PhotoContent = ({ data, single }) => {
    const user = React.useContext(UserContext);
 
    const { photo, comments } = data;
 
    return (
-      <PhotoContentStyle>
+      <PhotoContentStyle className={`${single ? 'singlePage' : ''}`}>
          <BoxImage>
             <ImageSkeleton src={photo.src} alt={photo.title} />
          </BoxImage>
@@ -44,7 +44,7 @@ const PhotoContent = ({ data }) => {
                </BoxAttributeDetails>
             </BoxContentDetails>
          </BoxDetails>
-         <PhotoComments id={photo.id} comments={comments} />
+         <PhotoComments single={single} id={photo.id} comments={comments} />
       </PhotoContentStyle>
    );
 };

@@ -22,6 +22,11 @@ export const PhotoContentStyle = styled.div`
    transform: scale(0.8);
    animation: ${scaleUp} 0.3s forwards;
 
+   &.singlePage {
+      grid-template-columns: 1fr;
+      height: auto;
+   }
+
    @media (max-width: 64rem) {
       height: auto;
       max-height: calc(100vh - 4rem);
@@ -33,6 +38,11 @@ export const PhotoContentStyle = styled.div`
 export const BoxImage = styled.div`
    grid-row: 1/4;
 
+   &.singlePage {
+      grid-row: 1;
+      border-radius: 2rem;
+   }
+
    @media (max-width: 64rem) {
       grid-row: 1;
    }
@@ -40,6 +50,10 @@ export const BoxImage = styled.div`
 
 export const BoxDetails = styled.div`
    padding: 2rem 2rem 0 2rem;
+
+   &.singlePage {
+      padding: 2rem 0 0 0;
+   }
 `;
 
 export const BoxContentDetails = styled.div`

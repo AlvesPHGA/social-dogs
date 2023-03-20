@@ -3,7 +3,7 @@ import { UserContext } from '../../../UserContext';
 import { PhotoCommentsStyle } from './PhotoComments.style';
 import PhotoCommentsForm from './PhotoCommentsForm/PhotoCommentsForm';
 
-const PhotoComments = (props) => {
+const PhotoComments = (props, single) => {
    const { login } = useContext(UserContext);
 
    const [comments, setComments] = React.useState(() => props.comments);
@@ -15,7 +15,7 @@ const PhotoComments = (props) => {
    }, [comments]);
 
    return (
-      <PhotoCommentsStyle>
+      <PhotoCommentsStyle className={`${single ? 'singlePage' : ''}`}>
          <ul ref={commentsSection} className="commentsList">
             {comments.map((comment) => (
                <li key={comment.comment_ID}>
