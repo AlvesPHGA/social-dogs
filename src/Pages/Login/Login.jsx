@@ -21,7 +21,7 @@ const Login = () => {
                <Route path="/" element={<LoginForm />} />
                <Route path="create" element={<LoginCreate />} />
                <Route path="passwordlost" element={<LoginLost />} />
-               <Route path="reset" element={<LoginReset />} />
+               <Route path="resetar" element={<LoginReset />} />
                <Route path="*" element={<NotFound />} />
             </Routes>
          </BoxFormsStyle>

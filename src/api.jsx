@@ -152,3 +152,19 @@ export const RECOVER_PWD = (body) => {
       },
    };
 };
+
+// reset password
+export const RESET_PWD = (body) => {
+   return {
+      url: API_URL + '/api/password/reset',
+
+      options: {
+         method: 'POST',
+         headers: {
+            'Content-Type': 'application/json',
+         },
+
+         body: JSON.stringify(body),
+      },
+   };
+};
