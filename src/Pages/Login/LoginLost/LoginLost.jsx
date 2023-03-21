@@ -19,12 +19,12 @@ const LoginLost = () => {
       event.preventDefault();
 
       if (login.validate) {
-         const { url, opiton } = RECOVER_PWD({
+         const { url, options } = RECOVER_PWD({
             login: login.value,
             url: pathLocal.href.replace('passwordlost', 'resetar'),
          });
 
-         const { json } = request();
+         const { json } = await request(url, options);
       }
    }
 
@@ -50,7 +50,7 @@ const LoginLost = () => {
             </form>
          )}
 
-         {error && <Error error={error} />}
+         <Error error={error} />
       </LoginLostStyle>
    );
 };
