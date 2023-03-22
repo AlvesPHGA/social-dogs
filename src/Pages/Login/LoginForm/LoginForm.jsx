@@ -47,7 +47,7 @@ const LoginForm = () => {
                <Button>Entrar</Button>
             )}
 
-            <Error error={error} />
+            <Error error={error && 'Dados invalidos'} />
          </LoginFormStyle>
 
          <LinkPasswordLost>
