@@ -22,3 +22,13 @@ export const AnimaLeft = styled.section`
    transform: translateX(-20px);
    animation: ${animaLeft} 0.3s forwards;
 `;
+
+export const AppStyle = styled.div`
+   display: flex;
+   flex-direction: column;
+   min-height: calc(100vh + 10rem);
+
+   & .body {
+      flex: 1;
+   }
+`;
