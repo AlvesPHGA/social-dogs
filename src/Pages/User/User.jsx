@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import Head from '../../Components/Global/Head/Head';
 import NotFound from '../../Components/Helper/NotFound/NotFound';
 import { Container } from '../../Styles/Styles.style';
 import { UserContext } from '../../UserContext';
@@ -12,6 +13,7 @@ const User = () => {
    const { data } = React.useContext(UserContext);
    return (
       <Container>
+         <Head title="Perfil" />
          <Header />
          <Routes>
             <Route path="/" element={<Feeds user={data.id} />} />

@@ -2,6 +2,7 @@ import React from 'react';
 import { RECOVER_PWD } from '../../../api';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
+import Head from '../../../Components/Global/Head/Head';
 import { Title } from '../../../Components/Global/Title';
 import Error from '../../../Components/Helper/Error/Error';
 import useFetch from '../../../Hooks/useFetch';
@@ -30,6 +31,7 @@ const LoginLost = () => {
 
    return (
       <LoginLostStyle>
+         <Head title="Recuperar senha" />
          <Title>Recuperar senha</Title>
 
          {data ? (

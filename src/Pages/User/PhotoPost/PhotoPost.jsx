@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { PHOTO_POST } from '../../../api';
 import Button from '../../../Components/Form/Button/Button';
 import Input from '../../../Components/Form/Input/Input';
+import Head from '../../../Components/Global/Head/Head';
 import Error from '../../../Components/Helper/Error/Error';
 import useFetch from '../../../Hooks/useFetch';
 import useForm from '../../../Hooks/useForm';
@@ -50,6 +51,7 @@ const PhotoPost = () => {
 
    return (
       <AnimaLeft>
+         <Head title="Adicionar foto" />
          <PhotoPostStyle>
             <form onSubmit={handlePostPhoto}>
                <Input legend="Nome" type="text" {...name} />

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router';
 import { Routes, Navigate } from 'react-router-dom';
+import Head from '../../Components/Global/Head/Head';
 import NotFound from '../../Components/Helper/NotFound/NotFound';
 import { UserContext } from '../../UserContext';
 import { BoxFormsStyle, LoginStyle } from './Login.style';
@@ -16,6 +17,7 @@ const Login = () => {
    if (login === true) return <Navigate to="/accout" />;
    return (
       <LoginStyle>
+         <Head title="Login" />
          <BoxFormsStyle>
             <Routes>
                <Route path="/" element={<LoginForm />} />
