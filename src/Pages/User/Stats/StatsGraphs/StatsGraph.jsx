@@ -14,12 +14,12 @@ const StatsGraph = ({ data }) => {
             y: +item.acessos,
          };
       });
-      // const access = data
-      //    .map(({ acessos }) => Number(acessos))
-      //    .reduce((a, b) => a + b);
-      // setTotal(access);
+      const access = data
+         .map(({ acessos }) => Number(acessos))
+         .reduce((a, b) => a + b, 0);
+      setTotal(access);
       console.log(data);
-      // setGraph(graphData);
+      setGraph(graphData);
    }, [data]);
 
    return (
